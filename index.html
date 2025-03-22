@@ -6,11 +6,12 @@
     <title>بطاقة المعايدة</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            direction: rtl;
-            background-color: #f8f8f8;
-        }
+    font-family: 'Tegwal', sans-serif;
+    text-align: center;
+    direction: rtl;
+    background-color: #f8f8f8;
+}
+
 
         .container {
             margin-top: 50px;
@@ -29,18 +30,21 @@
     height: 600px;
     position: relative;
     margin: auto;
-    background: url('background.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dfmrgs5rh/image/upload/v1742677251/011.jpg_lq0mny.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
     font-weight: bold;
-    color: white;
-    border: 5px solid black; /* احتفظ بالحدود مؤقتًا لرؤية العنصر */
+    color: rgb(0, 0, 0);
 }
-
-
+/* تعديل موضع النص */
+.card span {
+    position: absolute;
+    top: 70%; /* نزّل النص أكثر حسب الحاجة */
+    transform: translateY(-50%);
+}
 
         .download-btn {
             margin-top: 20px;
@@ -75,15 +79,16 @@
             let name = document.getElementById("nameInput").value;
             document.getElementById("nameText").textContent = name || "الاسم يظهر هنا";
         }
-
         function downloadImage() {
-            html2canvas(document.getElementById("card")).then(canvas => {
-                let link = document.createElement("a");
-                link.download = "greeting-card.png";
-                link.href = canvas.toDataURL("image/png");
-                link.click();
-            });
-        }
+    html2canvas(document.getElementById("card"), { useCORS: true }).then(canvas => {
+        let link = document.createElement("a");
+        link.download = "greeting-card.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+        alert("تم تحميل الصورة بنجاح!");
+    });
+}
+
     </script>
 
 </body>

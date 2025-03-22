@@ -18,18 +18,18 @@
 }
 
 
-        .container {
-            margin-top: 50px;
-        }
+    .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-        input {
-            padding: 10px;
-            width: 250px;
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
+input, button {
+    margin: 10px auto;
+    display: block;
+}
         .card {
     width: 600px;
     height: 600px;
@@ -70,7 +70,7 @@
 <body>
 
     <div class="container">
-        <h2>اكتب اسمك لتخصيص كارت المعايدة</h2>
+        <h2>اكتب اسمك لتخصيص بطاقة المعايدة</h2>
         <input type="text" id="nameInput" placeholder="اكتب اسمك هنا..." oninput="updateName()">
         <div class="card" id="card">
             <span id="nameText">الاسم يظهر هنا</span>
